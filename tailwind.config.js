@@ -8,6 +8,13 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        primary: '#047857',      // Deep green
+        secondary: '#EA580C',    // Orange
+        background: '#F3F4F6',   // Light neutral color
+        textPrimary: '#000000',  // Basic black
+        textSecondary: '#4B5563' // Dark gray
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
