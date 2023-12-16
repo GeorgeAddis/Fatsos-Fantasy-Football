@@ -1,51 +1,46 @@
-// components/Navbar.tsx
-import Image from "next/image";
+// components/layout/navbar.tsx
+
 import Link from "next/link";
-import useScroll from "@/lib/hooks/use-scroll";
 import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
 
-export default function NavBar({ session }: { session: Session | null }) {
-  const { SignInModal, setShowSignInModal } = useSignInModal();
-  const scrolled = useScroll(50);
+export default function Navbar({ session }: { session: Session | null }) {
+
+  // Apply padding as a percentage
+  const navStyle: React.CSSProperties = {
+    paddingLeft: '15%',  // Set the left padding to be 15%
+    paddingRight: '15%', // Set the right padding to be 15%
+  };
+
+  /* Align the right section to the far right */
+  const rightSectionStyle = session ? {} : { marginLeft: 'auto' };
 
   return (
-    <>
-      <SignInModal />
-      <div
-        className={`fixed top-0 w-full flex justify-center ${
-          scrolled ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl" : "bg-white/0"
-        } z-30 transition-all`}
-      >
-        <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
-          {/* Enclose the Image and p elements within a single a tag */}
+    <div className="navbar fixed top-0 left-0 right-0 z-30 transition-all">
+      <nav style={navStyle} className="max-w-screen-xl mx-auto flex justify-between items-center w-full h-full">
+        {/* Left-aligned links */}
+        <div className="flex items-center space-x-4">
+          {/* Home Link */}
           <Link href="/">
-            <a className="flex items-center font-display text-2xl">
-              <Image
-                src="/logo.png"
-                alt="Precedent logo"
-                width="30"
-                height="30"
-                className="mr-2 rounded-sm"
-              />
-              <span>Precedent</span> {/* Changed from p to span to follow proper HTML5 semantics */}
-            </a>
+            <a className="nav-link">Home</a>
           </Link>
-          <div>
-            {session ? (
-              <UserDropdown session={session} />
-            ) : (
-              <button
-                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-                onClick={() => setShowSignInModal(true)}
-              >
-                Sign In
-              </button>
-            )}
-          </div>
+          {/* Dynasty Link */}
+          <Link href="/dynasty">
+            <a className="nav-link">Dynasty</a>
+          </Link>
         </div>
-      </div>
-    </>
+        {/* Right-aligned sign in link 
+        <div style={rightSectionStyle}>
+          {session ? (
+            <UserDropdown session={session} />
+          ) : (
+            <Link href="/sign-in">
+              <a className="nav-link">Sign In</a>
+            </Link>
+          )}
+        </div>*/}
+      </nav>
+    </div>
   );
 }

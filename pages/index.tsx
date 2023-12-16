@@ -1,17 +1,17 @@
-// pages/index.tsx
-import { useSession } from "next-auth/react";
 import Navbar from '../components/layout/navbar';
+import DefaultPage from '../components/layout/default-page';
+import { useSession } from "next-auth/react";
 
 const Home: React.FC = () => {
-  const { data: session } = useSession(); // Retrieve the session data using the useSession hook
+  const { data: session } = useSession();
 
   return (
-    <div className="pt-16 bg-background min-h-screen">
-      <Navbar session={session} /> {/* Pass the session data to the Navbar component */}
-      <div className="mx-20">
-        <h1 className="text-2xl font-bold text-textPrimary">Welcome to my Next.js site!</h1>
+    <div className="pt-16 min-h-screen bg-background">
+      <Navbar session={session} />
+      <DefaultPage>
+        <h1 className="text-3xl font-bold text-textPrimary mb-4">Welcome to my Next.js site!</h1>
         {/* Add more content here */}
-      </div>
+      </DefaultPage>
     </div>
   );
 };

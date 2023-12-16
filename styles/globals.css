@@ -1,0 +1,97 @@
+/* styles/globals.css */
+
+/* Reset some basic elements */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --primary-color: #34A853;     
+    --secondary-color: #AED581;    
+    --accent-color: #D7FFAB;     
+    --text-color: #FFFFFF;  
+    --page-text-color: #000000;     
+    --background-color: #FFFFFF;   
+    --secondary-text-color: #9E9E9E;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Set up typography defaults */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--page-text-color);
+}
+  
+/* Other global styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed; /* Fixed position to keep the navbar at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: var(--primary-color); /* Set your primary color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0rem;
+    width: 100%;
+}
+  
+/* Navbar link styles */
+.nav-link, .sign-in-button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    color: var(--text-color); /* Change the text color to white */
+    font-weight: bold; /* Make the font weight bold */
+    text-align: center;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 100%;
+    transition: background-color 0.3s; /* Optional: Adds a transition for hover effect */
+}
+
+.nav-link:hover, .sign-in-button:hover {
+    background-color: var(--secondary-color); /* This will be the hover background color */
+}
+
