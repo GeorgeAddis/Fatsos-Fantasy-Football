@@ -5,7 +5,7 @@ import DefaultPage from '../components/layout/default-page';
 import RankingsPanel from '../components/rankings/RankingsPanel';
 import AllPositionsRankings from '../components/rankings/AllPositionsRankings';
 import PositionsRankings from '../components/rankings/PositionsRankings';
-import { Position } from './types'; 
+import { Position } from '../utils/types'; 
 
 const Dynasty: React.FC = () => {
   const [selectedPosition, setSelectedPosition] = useState<Position>('Overall');
