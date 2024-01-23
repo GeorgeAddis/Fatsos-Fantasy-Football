@@ -13,9 +13,9 @@ const Dynasty: React.FC = () => {
 
   const renderRankings = () => {
     if (selectedPosition === 'Overall') {
-      return <AllPositionsRankings rankingType="dynasty" />;
+      return <AllPositionsRankings rankingType="Dynasty" />;
     } else {
-      return <PositionsRankings rankingType="dynasty" position={selectedPosition} />;
+      return <PositionsRankings rankingType="Dynasty" position={selectedPosition} />;
     }
   };
 

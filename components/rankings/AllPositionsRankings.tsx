@@ -22,13 +22,11 @@ const AllPositionsRankings = ({ rankingType }: { rankingType: RankingType }) => 
         // Use the ranking type to get the appropriate limit
         const limit = RANKING_TYPE_LIMITS[rankingType];
 
-        const response = await fetch(`/api/rankings/all?rankingType=${rankingType}&limit=${limit}`);
+        const response = await fetch(`/api/rankings/${rankingType}?limit=${limit}`);
         if (!response.ok) {
           throw new Error('Failed to fetch rankings');
         }
         const data = await response.json();
-        console.log("TEST");
-        console.log(data);
         setRankings(data);
       } catch (error) {
         if (error instanceof Error) {

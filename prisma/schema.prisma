@@ -57,19 +57,22 @@ model VerificationToken {
 }
 
 model Player {
-  playerId Int       @id @default(autoincrement())
-  fullName String    @db.VarChar(255)
-  position String?   @db.VarChar(50)
-  team     String?   @db.VarChar(100)
+  playerId Int       @id @default(autoincrement()) @map("PlayerId")
+  fullName String    @db.VarChar(255) @map("FullName")
+  position String?   @db.VarChar(50) @map("Position")
+  team     String?   @db.VarChar(100) @map("Team")
   rankings Ranking[]
+
+  @@map("Player")
 }
 
 model Ranking {
-  rankingId Int    @id @default(autoincrement())
-  playerId  Int?
-  rank      Int
-  type      String @db.VarChar(50)
-  player    Player? @relation(fields: [playerId], references: [playerId])
+  rankingId Int      @id @default(autoincrement()) @map("RankingId")
+  playerId  Int?     @map("PlayerId")
+  rank      Int      @map("Rank")
+  type      String   @db.VarChar(50) @map("Type")
+  player    Player?  @relation(fields: [playerId], references: [playerId])
 
   @@unique([playerId, type])
+  @@map("Ranking")
 }
