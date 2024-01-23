@@ -1,5 +1,9 @@
 /* styles/globals.css */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Reset some basic elements */
 html,
 body,
@@ -35,6 +39,8 @@ h6 {
     --page-text-color: #000000;     
     --background-color: #FFFFFF;   
     --secondary-text-color: #9E9E9E;
+    --light-grey: #E5E5E5;  
+    --dark-grey: #B3B3B3;
 }
 
 *,
@@ -72,14 +78,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 0rem;
+    padding: 0.25rem 0rem;
     width: 100%;
 }
   
 /* Navbar link styles */
 .nav-link, .sign-in-button {
     padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
+    margin: 0;
     color: var(--text-color); /* Change the text color to white */
     font-weight: bold; /* Make the font weight bold */
     text-align: center;
@@ -94,4 +100,29 @@ a {
 .nav-link:hover, .sign-in-button:hover {
     background-color: var(--secondary-color); /* This will be the hover background color */
 }
+
+.custom-button {
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: var(--page-text-color);
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--light-grey);
+  border: 2px solid var(--dark-grey);
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Ensure full width */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: var(--secondary-color); /* Light green on hover */
+  border-color: var(--primary-color); /* Dark green border on hover */
+}
+
+.custom-button.selected {
+  background-color: var(--secondary-color); /* Light green for selected */
+  border-color: var(--primary-color); /* Dark green border for selected */
+}
+
 

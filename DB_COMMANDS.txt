@@ -1,0 +1,19 @@
+-- Insert Players
+INSERT INTO "Player" ("fullName", "position", "team")
+VALUES
+  ('Josh Allen', 'QB', 'BUF'),
+  ('Patrick Mahomes', 'QB', 'KC');
+
+-- Insert Dynasty Rankings for Josh Allen and Patrick Mahomes
+INSERT INTO "Ranking" ("playerId", "rank", "type")
+SELECT
+  "playerId",
+  -- Set the appropriate rank for each player
+  CASE "fullName"
+    WHEN 'Josh Allen' THEN 1
+    WHEN 'Patrick Mahomes' THEN 2
+    ELSE NULL
+  END AS "rank",
+  'Dynasty' AS "type"
+FROM "Player"
+WHERE "fullName" IN ('Josh Allen', 'Patrick Mahomes');

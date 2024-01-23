@@ -9,8 +9,8 @@ export default function Navbar({ session }: { session: Session | null }) {
 
   // Apply padding as a percentage
   const navStyle: React.CSSProperties = {
-    paddingLeft: '15%',  // Set the left padding to be 15%
-    paddingRight: '15%', // Set the right padding to be 15%
+    paddingLeft: '7%',  // Set the left padding to be 7%
+    paddingRight: '7%', // Set the right padding to be 7%
   };
 
   /* Align the right section to the far right */
@@ -28,6 +28,10 @@ export default function Navbar({ session }: { session: Session | null }) {
           {/* Dynasty Link */}
           <Link href="/dynasty">
             <a className="nav-link">Dynasty</a>
+          </Link>
+          {/* Dynasty Link TODO change to link to redraft page*/}
+          <Link href="/dynasty">
+            <a className="nav-link">Redraft</a>
           </Link>
         </div>
         {/* Right-aligned sign in link 
