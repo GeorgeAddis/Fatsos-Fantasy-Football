@@ -104,7 +104,7 @@ a {
 /* Ranking menu styles */
 .custom-button {
   padding: 0.5rem 1rem;
-  margin: 0;
+  margin: 0% 30%;
   color: var(--page-text-color);
   font-weight: bold;
   text-align: center;
@@ -137,7 +137,7 @@ a {
 .ranking-table {
   border-collapse: collapse;
   width: 80%;
-  margin: auto;
+  margin: 0% 5%;
 }
 
 .ranking-table th,
@@ -165,3 +165,25 @@ a {
   text-align: center;
   font-weight: bold;
 }
+
+
+@media (max-width: 768px) {
+  .rankings-container {
+    flex-direction: column;
+  }
+  /* When on mobile, buttons next to each other */
+  .rankings-panel {
+    flex-direction: row;
+    justify-content: center; /* Center buttons horizontally */
+    padding-top: 10px; /* Space between the panel and the title on mobile */
+    margin: 0% 5%;
+  }
+
+  .custom-button {
+    padding: 0rem 0rem; /* Reduce padding to make buttons smaller */
+    margin: 0%;
+    flex-grow: 1; /* Allow buttons to grow and fill the available space if necessary */
+    flex-basis: calc(20% - 5px); /* Example calculation for five buttons in a row minus margin */
+  }
+}
+
