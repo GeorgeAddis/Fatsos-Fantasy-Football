@@ -32,7 +32,7 @@ h6 {
 }
 
 :root {
-    --primary-color: #34A853;     
+    --primary-color: #008000;     
     --secondary-color: #AED581;    
     --accent-color: #D7FFAB;     
     --text-color: #FFFFFF;  
@@ -101,6 +101,7 @@ a {
     background-color: var(--secondary-color); /* This will be the hover background color */
 }
 
+/* Ranking menu styles */
 .custom-button {
   padding: 0.5rem 1rem;
   margin: 0;
@@ -121,8 +122,46 @@ a {
 }
 
 .custom-button.selected {
-  background-color: var(--secondary-color); /* Light green for selected */
-  border-color: var(--primary-color); /* Dark green border for selected */
+  background-color: var(--primary-color); /* Dark green for selected */
+  border-color: var(--primary-color); /* Dark green border on hover */
+  color: var(--text-color);
 }
 
+.table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+/* Ranking table styles */
+.ranking-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+.ranking-table th,
+.ranking-table td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* Apply alternating row colors */
+.ranking-table tbody tr:nth-child(even) {
+  background-color: var(--light-grey);
+}
+
+.ranking-table tbody tr:nth-child(odd) {
+  background-color: #FFFFFF; /* White for odd rows */
+}
+
+.ranking-table th {
+  background-color: var(--light-grey); /* Keep the header with a different color if needed */
+}
+
+.tier-row td {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  font-weight: bold;
+}

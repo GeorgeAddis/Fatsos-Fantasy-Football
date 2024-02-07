@@ -13,9 +13,9 @@ const Dynasty: React.FC = () => {
 
   const renderRankings = () => {
     if (selectedPosition === 'Overall') {
-      return <AllPositionsRankings rankingType="Dynasty" />;
+      return <AllPositionsRankings rankingType="dynasty" />;
     } else {
-      return <PositionsRankings rankingType="Dynasty" position={selectedPosition} />;
+      return <PositionsRankings rankingType="dynasty" position={selectedPosition} />;
     }
   };
 
@@ -24,14 +24,14 @@ const Dynasty: React.FC = () => {
       <Navbar session={session} />
       <DefaultPage>
       <h1 className="text-5xl font-bold mb-4 text-center" style={{ marginBottom: "5%" }}>Dynasty PPR Rankings</h1>
-        <div className="flex w-full">
-          <div className="w-1/4" style={{ flex: "0 0 25%" }}>
+        <div className="flex justify-start w-full">
+          <div style={{ flex: "1" }}>
             <RankingsPanel
               selectedPosition={selectedPosition}
               onSelectPosition={setSelectedPosition}
             />
           </div>
-          <div className="w-3/4" style={{ flex: "0 0 75%" }}>
+          <div style={{ flex: "4" }}>
             {renderRankings()}
           </div>
         </div>
