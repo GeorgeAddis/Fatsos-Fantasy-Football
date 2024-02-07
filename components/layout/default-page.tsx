@@ -55,7 +55,7 @@ const DefaultPage: React.FC<DefaultPageProps> = ({ children, className }) => {
     width: isMobile ? '100%' : '70%', // Adjust width based on isMobile
     minHeight: '100vh',
     margin: '0 auto',
-    padding: isMobile ? '0' : '2%', // Adjust padding based on isMobile
+    padding: '2%',
   };
 
   return (
