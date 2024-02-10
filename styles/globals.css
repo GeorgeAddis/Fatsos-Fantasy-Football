@@ -68,38 +68,66 @@ a {
 
 /* Navbar styles */
 .navbar {
-    position: fixed; /* Fixed position to keep the navbar at the top */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    z-index: 1000; /* Ensure it's above other content */
-    background-color: var(--primary-color); /* Set your primary color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 0rem;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0rem;
+  width: 100%;
 }
-  
+
+.navbar > nav {
+  width: 70%; /* Ensure buttons start from in line with the left side of the page */
+  justify-content: left; 
+}
+
 /* Navbar link styles */
 .nav-link, .sign-in-button {
-    padding: 0.5rem 1rem;
-    margin: 0;
-    color: var(--text-color); /* Change the text color to white */
-    font-weight: bold; /* Make the font weight bold */
-    text-align: center;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    height: 100%;
-    transition: background-color 0.3s; /* Optional: Adds a transition for hover effect */
+  padding: 0.5rem 1rem;
+  margin: 0;
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .nav-link:hover, .sign-in-button:hover {
-    background-color: var(--secondary-color); /* This will be the hover background color */
+  background-color: var(--secondary-color);
 }
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar > nav {
+    width: 100%; /* Ensure nav takes up the full width */
+    justify-content: center; /* Center items */
+  }
+
+  .navbar .flex.items-center {
+    flex-direction: row; /* Align items in a row for mobile */
+    justify-content: center; /* Center the links */
+    flex-wrap: wrap; /* Wrap links if needed */
+  }
+
+  .nav-link, .sign-in-button {
+    text-align: center; /* Center text for each link/button */
+  }
+}
+
 
 /* Ranking menu styles */
 .custom-button {

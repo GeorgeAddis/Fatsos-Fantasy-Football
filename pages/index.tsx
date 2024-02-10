@@ -1,6 +1,7 @@
 import Navbar from '../components/layout/navbar';
 import DefaultPage from '../components/layout/default-page';
 import { useSession } from "next-auth/react";
+import Image from 'next/image';
 
 const Home: React.FC = () => {
   const { data: session } = useSession();
@@ -9,8 +10,15 @@ const Home: React.FC = () => {
     <div className="pt-16 min-h-screen bg-background">
       <Navbar session={session} />
       <DefaultPage>
-        <h1 className="text-3xl font-bold text-textPrimary mb-4">Welcome to my Next.js site!</h1>
-        {/* Add more content here */}
+        {/* Center the image */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Image
+            src="/fatsos_logo.png"
+            alt="Logo"
+            width={452} 
+            height={235} 
+          />
+        </div>
       </DefaultPage>
     </div>
   );

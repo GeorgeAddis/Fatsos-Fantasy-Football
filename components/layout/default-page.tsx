@@ -49,13 +49,13 @@ const DefaultPage: React.FC<DefaultPageProps> = ({ children, className }) => {
 
   // Adjust innerStyle padding based on isMobile state
   const innerStyle: React.CSSProperties = {
-    backgroundColor: theme.colors.background,
+    backgroundColor: isMobile ? theme.colors.secondary : theme.colors.background, // Use secondary color when in mobile view
     color: theme.colors.blackText,
     boxSizing: 'border-box',
     width: isMobile ? '100%' : '70%', // Adjust width based on isMobile
     minHeight: '100vh',
     margin: '0 auto',
-    padding: '2%',
+    padding: '0.5% 2%',
   };
 
   return (

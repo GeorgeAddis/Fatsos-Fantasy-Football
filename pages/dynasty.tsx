@@ -23,7 +23,7 @@ const Dynasty: React.FC = () => {
     <>
       <Navbar session={session} />
       <DefaultPage>
-        <h1 className="text-5xl font-bold mb-4 text-center" style={{ marginBottom: "5%" }}>Dynasty PPR Rankings</h1>
+        <h1 className="text-5xl font-bold mb-4 text-center" style={{ marginTop: "2%", marginBottom: "5%" }}>Dynasty PPR Rankings</h1>
         <div className="rankings-container flex justify-start w-full flex-wrap">
           <div className="rankings-panel" style={{ flex: "1" }}>
             <RankingsPanel
